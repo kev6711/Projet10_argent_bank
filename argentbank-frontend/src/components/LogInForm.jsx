@@ -43,6 +43,11 @@ function LogInForm() {
             <button type="submit" className="sign-in-button">
                 Sign In
             </button>
+            {loginStatus && loginStatus !== 200 && (
+                <p className="sign-in-error-message">
+                    Wrong Username or Password <br /> Please try again
+                </p>
+            )}
         </form>
     )
 }
