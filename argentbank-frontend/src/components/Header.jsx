@@ -2,12 +2,21 @@ import { Link } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import argentBankLogo from "../assets/img/compressed/argentBankLogo.webp"
 import { logOutUser } from "../actions/logOutUser.action"
+import { useEffect } from "react"
+import { userGet } from "../actions/userGet.action"
 
 function Header() {
     const dispatch = useDispatch()
-    const token = useSelector((state) => state.logInPostReducer?.body?.token)
+    const token = useSelector((state) => state.logInPostReducer?.body?.token) || localStorage.getItem("token")
     const isConnected = !!token
     const firstName = useSelector((state) => state.userGetReducer.firstName)
+
+    useEffect(() => {
+        if (token) {
+            dispatch(userGet(token))
+        }
+    }, [token, dispatch])
+
     const handleSignOut = () => {
         dispatch(logOutUser())
     }
