@@ -1,9 +1,12 @@
 import { useSelector } from "react-redux"
+import { useState } from "react"
 import "../assets/css/main.css"
+import EditUserForm from "../components/EditUserForm"
 
 function User() {
     const firstName = useSelector((state) => state.userGetReducer.firstName)
     const lastName = useSelector((state) => state.userGetReducer.lastName)
+    const [isEditing, setIsEditing] = useState(false)
 
     return (
         <div>
@@ -14,7 +17,13 @@ function User() {
                         <br />
                         {firstName} {lastName} !
                     </h1>
-                    <button className="edit-button">Edit Name</button>
+                    {isEditing ? (
+                        <EditUserForm onCancel={() => setIsEditing(false)} onSubmit={() => setIsEditing(false)} />
+                    ) : (
+                        <button className="edit-button" onClick={() => setIsEditing(true)}>
+                            Edit Name
+                        </button>
+                    )}
                 </div>
                 <h2 className="sr-only">Accounts</h2>
                 <section className="account">
