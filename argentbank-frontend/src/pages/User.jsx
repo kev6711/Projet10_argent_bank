@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux"
 import { useState } from "react"
-import "../assets/css/main.css"
+import "../assets/css/main.min.css"
 import EditUserForm from "../components/EditUserForm"
 import UserAccounts from "../components/UserAccounts"
 

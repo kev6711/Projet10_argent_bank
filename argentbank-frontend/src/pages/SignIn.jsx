@@ -1,4 +1,4 @@
-import "../assets/css/main.css"
+import "../assets/css/main.min.css"
 import LogInForm from "../components/LogInForm"
 
 function SignIn() {

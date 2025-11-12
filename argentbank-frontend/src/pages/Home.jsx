@@ -1,4 +1,4 @@
-import "../assets/css/main.css"
+import "../assets/css/main.min.css"
 import chatIcon from "../assets/img/compressed/icon-chat.webp"
 import moneyIcon from "../assets/img/compressed/icon-money.webp"
 import securityIcon from "../assets/img/compressed/icon-security.webp"

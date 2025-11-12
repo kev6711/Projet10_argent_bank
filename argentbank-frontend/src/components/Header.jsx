@@ -9,7 +9,7 @@ function Header() {
     const dispatch = useDispatch()
     const token = useSelector((state) => state.logInPostReducer?.body?.token) || localStorage.getItem("token")
     const isConnected = !!token
-    const firstName = useSelector((state) => state.userGetReducer.firstName)
+    const userName = useSelector((state) => state.userGetReducer.userName)
 
     useEffect(() => {
         if (token) {
@@ -31,7 +31,7 @@ function Header() {
                 <div>
                     <Link to="/User" className="main-nav-item">
                         <i className="fa fa-user-circle"></i>
-                        {firstName}
+                        {userName}
                     </Link>
                     <Link to="/" className="main-nav-item" onClick={handleSignOut}>
                         <i className="fa fa-sign-out"></i>
